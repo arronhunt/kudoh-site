@@ -1,0 +1,21 @@
+{
+  "name": "kudohclub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "neutrino start --use neutrino-preset-react",
+    "build": "neutrino build --use neutrino-preset-react"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "neutrino": "^6.0.5",
+    "neutrino-preset-react": "^6.0.5"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
