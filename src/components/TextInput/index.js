@@ -27,7 +27,7 @@ export default class TextInput extends Component {
             <div className="text-input" data-active={this.state.isActive}>
                 <label htmlFor={this.props.name} className="label">{this.props.label}</label>
                 <input
-                    type="email"
+                    type={this.props.type}
                     id={this.props.name}
                     name={this.props.name}
                     value={this.props.value}

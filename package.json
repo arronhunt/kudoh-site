@@ -1,26 +1,26 @@
 {
-  "name": "kudohclub",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "neutrino start --use neutrino-preset-react",
-    "build": "neutrino build --use neutrino-preset-react"
-  },
-  "author": "Arron Hunt",
-  "license": "ISC",
-  "devDependencies": {
-    "neutrino": "^6.0.5",
-    "neutrino-preset-react": "^6.0.5"
-  },
-  "dependencies": {
-    "expres": "0.0.5",
-    "flexboxgrid": "^6.3.1",
-    "react": "^15.6.1",
-    "react-confetti": "^1.1.5",
-    "react-dom": "^15.6.1",
-    "request": "^2.81.0",
-    "whatwg-fetch": "^2.0.3"
-  }
+    "name": "kudohclub",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "neutrino start",
+        "build": "neutrino build --use neutrino-preset-react"
+    },
+    "author": "Arron Hunt",
+    "license": "ISC",
+    "devDependencies": {
+        "neutrino": "^6.0.5",
+        "neutrino-preset-react": "^6.0.5"
+    },
+    "dependencies": {
+        "expres": "0.0.5",
+        "flexboxgrid": "^6.3.1",
+        "react": "^15.6.1",
+        "react-confetti": "^1.1.5",
+        "react-dom": "^15.6.1",
+        "request": "^2.81.0",
+        "whatwg-fetch": "^2.0.3"
+    }
 }
