@@ -5,6 +5,7 @@
     margin: 12px 0;
     outline: none;
     position: relative;
+    overflow: hidden;
 }
 .text-input:first-of-type {
     margin-top: 0;

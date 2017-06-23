@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/subscribe', (req, res) => {
-
     var options = {
         uri: `https://us16.api.mailchimp.com/3.0/lists/${LIST_ID}/members/`,
         method: 'POST',
@@ -25,11 +24,11 @@ app.get('/subscribe', (req, res) => {
             "Authorization": "Basic YW55OjI1ZWZjNzliMjQ2YmI4ZGFhNGRlNDg1NDA3Zjk3OWQ1LXVzMTY="
         },
         json: {
-            "email_address": "potatobutter@kudoh.club",
+            "email_address": req.query.email_address,
             "status": "subscribed",
             "merge_fields": {
-                "FNAME": "Potato",
-                "LNAME": "butter"
+                "FNAME": req.query.first_name,
+                "LNAME": req.query.last_name
             }
         }
     };

@@ -37,8 +37,18 @@ class App extends Component {
         })
     }
 
-    handleFormSubmit() {
-        fetch('/subscribe')
+    handleFormSubmit(event) {
+        event.preventDefault();
+
+        let name = this.state.name.split(' ');
+        let first_name = name[0];
+        let last_name  = name[1] || ' ';
+        let email_address = this.state.email_address;
+
+        let uri = `/subscribe?first_name=${first_name}&last_name=${last_name}&email_address=${email_address}`;
+        console.log(uri);
+
+        fetch(uri)
             .then((response) => {
                 console.log('RESPONSE', response.text())
                 this.renderName();
@@ -51,12 +61,16 @@ class App extends Component {
             <div className="App" data-celebrate={ this.state.shouldCelebrate }>
                 <Confetti numberOfPieces={ this.state.shouldCelebrate ? 200 : 0 } gravity={0.2} className='fetti' />
                 <div className="hero">
-                    <div className="header">
-                        <div className="logo">
-                            <img src="../../static/logo.svg" alt="Kudoh" height={46} width={202}/>
+                    <div className="header row">
+                        <div className="col-sm-6 col-xs-12">
+                            <div className="logo">
+                                <img src="../../static/logo.svg" alt="Kudoh" height={46} width={202}/>
+                            </div>
                         </div>
-                        <div className="tagline">
-                            <p>Credit sharing made simple.</p>
+                        <div>
+                            <div className="tagline">
+                                <p>Credit sharing made simple.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -66,9 +80,10 @@ class App extends Component {
                             ? (
                                 <div className="row">
                                     <div className="col-xs-12 success">
-                                        <h2>🎉 { this.state.displayName }, you're on the list!</h2>
+                                        <h2>🎉</h2>
+                                        <h2>{ this.state.displayName }, you're on the list!</h2>
                                         <p>Keep an eye on { this.state.email_address || 'your email' }, we'll send you a message to let you know when your account is ready.</p>
-                                        <button className="kudoh-button" onClick={ ()=>this.setState({shouldCelebrate:true}) }>Tweet about us &rarr;</button>
+                                        <a href="http://twitter.com/home?status=I just signed up for Kudoh! http://kudoh.club"><button className="kudoh-button">Tweet about it! &rarr;</button></a>
                                     </div>
                                 </div>
                             )
@@ -82,19 +97,21 @@ class App extends Component {
                                     <div className="col-xs-1" />
 
                                     <div className="col-sm-5 col-xs-12">
-                                        <TextInput
-                                            label="First & Last name"
-                                            name='name'
-                                            value={ this.state.name }
-                                            onChange={ this.handleFieldUpdate.bind(this) } />
-                                        <TextInput
-                                            label="Email address"
-                                            name='email_address'
-                                            value={ this.state.email_address }
-                                            onChange={ this.handleFieldUpdate.bind(this) } />
-                                        <button className="kudoh-button fluid" onClick={ this.handleFormSubmit.bind(this) }>
-                                            <span className='button-label'>Reserve my spot &rarr;</span>
-                                        </button>
+                                        <form onSubmit={this.handleFormSubmit.bind(this)}>
+                                            <TextInput
+                                                label="First & Last name"
+                                                name='name'
+                                                value={ this.state.name }
+                                                onChange={ this.handleFieldUpdate.bind(this) } />
+                                            <TextInput
+                                                label="Email address"
+                                                name='email_address'
+                                                value={ this.state.email_address }
+                                                onChange={ this.handleFieldUpdate.bind(this) } />
+                                            <button type='submit' className="kudoh-button fluid" onClick={ this.handleFormSubmit.bind(this) }>
+                                                <span className='button-label'>Reserve my spot &rarr;</span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             )

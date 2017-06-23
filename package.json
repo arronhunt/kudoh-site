@@ -8,7 +8,7 @@
     "start": "neutrino start --use neutrino-preset-react",
     "build": "neutrino build --use neutrino-preset-react"
   },
-  "author": "",
+  "author": "Arron Hunt",
   "license": "ISC",
   "devDependencies": {
     "neutrino": "^6.0.5",
