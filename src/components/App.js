@@ -53,7 +53,7 @@ class App extends Component {
                 <div className="hero">
                     <div className="header">
                         <div className="logo">
-                            <img src="../../images/logo.svg" alt="Kudoh" height={46} width={202}/>
+                            <img src="../../static/logo.svg" alt="Kudoh" height={46} width={202}/>
                         </div>
                         <div className="tagline">
                             <p>Credit sharing made simple.</p>
@@ -120,9 +120,9 @@ class App extends Component {
                         </div>
                         <div className="col-sm-6 col-xs-12 social">
                             <ul>
-                                <li><a href="http://twitter.com/kudohclub"><img src="../../images/icon_twiter.svg" alt="Twitter"/></a></li>
-                                <li><a href="https://angel.co/kudoh"><img src="../../images/icon_angel.svg" alt="Angel.co"/></a></li>
-                                <li><a href="https://www.linkedin.com/company-beta/18124866/"><img src="../../images/icon_linkedin.svg" alt="LinkedIn"/></a></li>
+                                <li><a href="http://twitter.com/kudohclub"><img src="../../static/icon_twiter.svg" alt="Twitter"/></a></li>
+                                <li><a href="https://angel.co/kudoh"><img src="../../static/icon_angel.svg" alt="Angel.co"/></a></li>
+                                <li><a href="https://www.linkedin.com/company-beta/18124866/"><img src="../../static/icon_linkedin.svg" alt="LinkedIn"/></a></li>
                             </ul>
                         </div>
                     </div>
