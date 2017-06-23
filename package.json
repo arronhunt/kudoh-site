@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "neutrino start",
-        "build": "neutrino build --use neutrino-preset-react"
+        "build": "neutrino build",
+        "server": "neutrino build && node server"
     },
     "author": "Arron Hunt",
     "license": "ISC",
