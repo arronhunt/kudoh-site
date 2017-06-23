@@ -2,6 +2,15 @@
     padding: 8px 16px;
     border: 1px solid rgba(255,255,255,0.7);
     border-radius: 8px;
+    margin: 12px 0;
+    outline: none;
+    position: relative;
+}
+.text-input:first-of-type {
+    margin-top: 0;
+}
+.text-input:last-of-type {
+    margin-bottom: 0;
 }
 
 .text-input .label {
@@ -9,6 +18,21 @@
     color: rgba(255,255,255,0.7);
     text-transform: uppercase;
     display: block;
+    transform-origin: top left;
+    position: relative;
+    transition: all 0.15s ease-out;
+    pointer-events: none;
+}
+
+.text-input[data-active='false'] .label {
+    transform: scale(2);
+    top: 8px;
+    color: rgba(255,255,255,0.4);
+}
+
+.text-input[data-active='false'] input {
+    position: relative;
+    top: -8px;
 }
 
 .text-input input {

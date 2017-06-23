@@ -15,7 +15,10 @@
     "neutrino-preset-react": "^6.0.5"
   },
   "dependencies": {
+    "flexboxgrid": "^6.3.1",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-confetti": "^1.1.5",
+    "react-dom": "^15.6.1",
+    "whatwg-fetch": "^2.0.3"
   }
 }

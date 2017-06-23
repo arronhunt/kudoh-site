@@ -6,7 +6,41 @@
 
 .App .hero {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     background-image: linear-gradient(-135deg, #E700EE 0%, #DB00E1 100%);
+    color: #fff;
+}
+
+h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.kudoh-button {
+    border: none;
+    background-color: #F3FAFA;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #9700E7;
+    margin: 12px 0;
+}
+.kudoh-button.fluid {
+    width: 100%;
+}
+.kudoh-button:hover {
+    cursor: pointer;
+}
+.kudoh-button .button-label {
+    display: inline-block;
+    transition: all 0.1s ease;
+}
+.kudoh-button:hover .button-label {
+    transform: scale(1.1);
 }
 
 .header {
@@ -22,4 +56,106 @@
     font-size: 1em;
     color: #FFFFFF;
     line-height: 1em;
+}
+
+.hero .content {
+    max-width: 790px;
+    padding: 12px;
+    margin: auto;
+}
+
+.success {
+    text-align: center;
+    font-size: 21px;
+    animation: appear 2s ease-out;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.success h2 {
+    font-size: 56px;
+    line-height: 64px;
+    font-weight: 300;
+}
+
+.divider {
+    position: relative;
+    top: -64px;
+    transform: skewY(-3deg);
+}
+.divider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 64px;
+    background-color: #fff;
+}
+
+.divider .row {
+    height: 64px;
+}
+
+.footer {
+    padding: 32px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #453D4C;
+    line-height: 24px;
+    margin: 0;
+}
+
+.footer .social {
+    text-align: right;
+}
+.footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.footer ul li {
+    display: inline-block;
+    background: #FFFFFF;
+    border: 1px solid #CED4D9;
+    border-radius: 4px;
+    margin: 0 4px;
+}
+.footer ul li:first-of-type {
+    margin-left: 0;
+}
+.footer ul li:last-of-type {
+    margin-right: 0;
+}
+.footer ul li a {
+    line-height: 24px;
+    display: block;
+    padding: 12px 8px;
+}
+.footer ul li a img {
+    display: block;
+}
+
+
+/*CONFETTI HACK*/
+.App[data-celebrate='true'] .fetti {
+    animation: fadeOut 1s ease;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
