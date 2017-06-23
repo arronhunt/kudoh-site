@@ -8,4 +8,5 @@
 ### Run
 
 `npm run start` Start dev server
-`npm run build && node server` Start the production server 
+
+`npm run build && node server` Start the production server

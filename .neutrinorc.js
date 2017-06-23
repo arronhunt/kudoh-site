@@ -1,10 +1,19 @@
 module.exports = {
+    output: {
+        publicPath: "/foobar"
+    },
     use: [
         ['neutrino-preset-react', {
             /* preset options */
 
             // Example: disable Hot Module Replacement
             hot: true,
+
+            "config": {
+                "output": {
+                    "publicPath": "/"
+                }
+            },
 
             // Example: change the page title
             html: {

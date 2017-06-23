@@ -9,11 +9,6 @@ let LIST_ID = "ae89d41329";
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
-// Always return the main index.html, so react-router render the route in the client
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
-
 app.get('/subscribe', (req, res) => {
     var options = {
         uri: `https://us16.api.mailchimp.com/3.0/lists/${LIST_ID}/members/`,
@@ -35,6 +30,11 @@ app.get('/subscribe', (req, res) => {
     request(options, function(error, response, body) {
         res.send(body);
     })
+});
+
+// Always return the main index.html, so react-router render the route in the client
+app.all('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 module.exports = app;

@@ -107,9 +107,6 @@ class App extends Component {
                                     <div className="col-sm-6 col-xs-12">
                                         <h2>A one-of-a-kind platform for getting rewarded for good credit, and sharing it with others.</h2>
                                         <p>Join our waiting list to get early access!</p>
-
-
-
                                     </div>
 
                                     <div className="col-xs-1" />
