@@ -38,31 +38,12 @@ class App extends Component {
     }
 
     handleFormSubmit() {
-
-        fetch('https://us16.api.mailchimp.com/3.0/lists/ae89d41329/members/', {
-            method: 'POST',
-            headers: {
-                "user": "anystring:25efc79b246bb8daa4de485407f979d5-us16",
-                "Content-Type": "application/json",
-                "Authorization": "Basic YW55OjI1ZWZjNzliMjQ2YmI4ZGFhNGRlNDg1NDA3Zjk3OWQ1LXVzMTY="
-            },
-            body: JSON.stringify({
-                "email_address": "potatobutter@kudoh.club",
-                "status": "subscribed",
-                "merge_fields": {
-                    "FNAME": "Potato",
-                    "LNAME": "butter"
-                }
+        fetch('/subscribe')
+            .then((response) => {
+                console.log('RESPONSE', response.text())
+                this.renderName();
+                this.setState({shouldCelebrate:true});
             })
-        })
-            .then(function(response) {
-                console.log(response.text())
-            }).then(function(body) {
-                console.log(body)
-            })
-
-        this.renderName();
-        this.setState({shouldCelebrate:true});
     }
 
     render() {
